@@ -1,18 +1,18 @@
 import { useState } from "react"
 import Form from "./components/Form"
-import { useRestraurent } from "./Hooks/Hooks"
+import { useRestaurant } from "./Hooks/Hooks"
 import toast from "react-hot-toast"
 
 const App = () => {
 
     const [formOpen, setFormOpen] = useState(false)
-    const { restaurent, setRestaurent } = useRestraurent()
+    const { restaurant, setRestaurant } = useRestaurant()
     const [formType, setType] = useState("")
     const [updateItem, setUpdateItem] = useState(null)
 
     const handleRemove = (removeId) => {
-        const res = restaurent.filter(item => item.id != removeId)
-        setRestaurent(res)
+        const res = restaurant.filter(item => item.id != removeId)
+        setRestaurant(res)
         return toast.success("Removed")
     }
 
@@ -27,7 +27,7 @@ const App = () => {
             {formOpen && formType && <Form data={updateItem} setUpdateItem={setUpdateItem} type={formType} setFormOpen={setFormOpen} />}
             <div className="flex justify-center gap-3">
                 {
-                    restaurent.map(item => {
+                    restaurant.map(item => {
                         return (
                             <div key={item.id} className="w-60 p-2 border-2 border-gray-600">
                                 <div>

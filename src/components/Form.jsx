@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useRestraurent } from '../Hooks/Hooks';
+import { useRestaurant } from '../Hooks/Hooks';
 import { v4 as createId } from 'uuid';
 import toast from 'react-hot-toast';
 
@@ -12,7 +12,7 @@ const Form = ({ data, type, setFormOpen, setUpdateItem }) => {
         location: data?.location ?? "",
         image: data?.image ?? ""
     })
-    const {restaurent, setRestaurent} = useRestraurent()
+    const {restaurant, setRestaurant} = useRestaurant()
 
     const handleChange = (event) => {
         setFormData({...formData, [event.target.name]: event.target.value})
@@ -20,20 +20,20 @@ const Form = ({ data, type, setFormOpen, setUpdateItem }) => {
 
     const handleUpdate = (e) => {
         e.preventDefault()
-        const res = restaurent.map(item => {
+        const res = restaurant.map(item => {
             if (item.id == data.id) {
                 return {...formData, id: data.id}
             }
             return item
         })
-        setRestaurent(res)
+        setRestaurant(res)
         return toast.success("Updated")
     }
 
     const handleCreate = (e) => {
         e.preventDefault()
         formData.id = createId()
-        setRestaurent([formData, ...restaurent])
+        setRestaurant([formData, ...restaurant])
         setFormData({
             name: "",
             description: "",
