@@ -4,7 +4,7 @@
 Clone the project ( use . to install project in current folder )
 
 ```bash
-git clone https://github.com/Futura-Labs-official/restaurent-crud-react-sample .
+git clone https://github.com/Futura-Labs-official/restaurant-crud-react-sample .
 ```
 
 Install dependencies
