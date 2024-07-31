@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import { RestaurantContext } from "../Provider/RestaurantProvider"
+import { CartContext } from "../Provider/CartProvider"
 
-export const useRestaurant = () => {
-    return useContext(RestaurantContext)
+export const useCart = () => {
+    return useContext(CartContext)
 }
