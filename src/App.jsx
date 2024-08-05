@@ -1,10 +1,8 @@
-import ApiCalling from "./components/ApiCalling"
+import Router from "./Routers/Router"
 
 const App = () => {
 
-    return (
-        <ApiCalling />
-    )
+    return (<Router />)
 }
 
 export default App

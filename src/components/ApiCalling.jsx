@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { api } from '../axios';
 import { useCart } from '../Hooks/Hooks';
 import toast from 'react-hot-toast';
-import Cart from './Cart';
+import NavBar from './NavBar';
 
 const ApiCalling = () => {
 
@@ -44,7 +44,8 @@ const ApiCalling = () => {
     return (
        
         <Fragment>
-            <div className='flex gap-3 px-5 justify-center flex-wrap mt-10'>
+            <NavBar />
+            <div className='flex gap-3 px-5 justify-center flex-wrap mt-20'>
                 {
                     products.map(item => {
                         const rating = item.rating?.rate
@@ -66,7 +67,6 @@ const ApiCalling = () => {
                     })
                 }
             </div>
-            <Cart />
         </Fragment>
     );
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useCart } from '../Hooks/Hooks';
+import NavBar from './NavBar';
 
 const Cart = () => {
 
@@ -38,7 +39,8 @@ const Cart = () => {
     }
 
     return (
-        <div className='flex gap-3 px-5 flex-col justify-center flex-wrap mt-10'>
+        <div className='flex gap-3 px-5 flex-col justify-center flex-wrap mt-20'>
+            <NavBar cart={true} />
             <h1 className='text-center text-white'>Cart Products</h1>
             <div className='flex gap-3 flex-wrap justify-center'>
                 {
