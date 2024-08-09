@@ -26,7 +26,7 @@ const SingleTodo = () => {
         <div className='w-screen mt-10 px-2 md:px-10 flex justify-center'>
             <div className='w-full md:w-[500px] bg-[#2d2d2d] p-3 text-white'>
                 <p>ID: { todoData.id}</p>
-                <p>Task: { todoData.task}</p>
+                <p>Task: { todoData.task.title}</p>
                 <p>Created At: { todoData.createdAt}</p>
                 <p>Updated At: {todoData.updatedAt}</p>
                 
