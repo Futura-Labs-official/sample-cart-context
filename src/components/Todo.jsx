@@ -20,7 +20,9 @@ const Todo = () => {
             description: ""
         },
         onSubmit: (values) => {
-            
+            if (!values.title || !values.description) return toast.error("Task and description field are required")
+            if (todoList.some(item => item.task.title.toLowerCase() == values.title.toLowerCase()))
+                return toast.error("Task already exist")
             const taskObject = {
                 id: createUID(),
                 task: values,
